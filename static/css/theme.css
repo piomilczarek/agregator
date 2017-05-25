@@ -1,0 +1,49 @@
+body {
+  padding: 10px;
+  height: auto;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+.col-sm-3 {
+ height:150px;
+}
+
+.col-sm-4 {
+ max-width: 350px;
+ height:100%;
+ overflow: hidden;
+}
+
+.row {
+  margin-bottom: 5px;
+  height: 400px;
+}
+
+.small {
+  margin-top: 3px;
+  font-size: 2;
+}
+
+img{
+  object-fit: contain;
+  border:1px solid;
+}
+
+#thumb{
+  width: 350px;
+  height: 180px;
+  border: 1px solid black;
+}

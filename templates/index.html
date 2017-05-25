@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/favicon.ico">
+    <title>Theme Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="static/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="static/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="static/css/theme.css" rel="stylesheet">
+    <script src="static/assets/js/ie-emulation-modes-warning.js"></script>
+    <link  href="static/cropper.css" rel="stylesheet">
+    <script src="static/cropper.js"></script>
+   <!-- <script type="text/javascript" {{ url_for('static', filename='list.js')}}></script>
+         <script type="text/javascript">
+            myVar = myFunc({{ articleList }})
+    </script>-->
+
+
+  </head>
+  <body>
+     {% for article in articleList %}
+      {%if (loop.index-1) is divisibleby(3)%}
+        <div class="row">
+      {% endif %}
+      <div class="col-sm-4">
+         <div style="" id="{{ article.getId() }}" data-cropp="{{ article.getImgCrop() }}"/></div>
+          <a href="art/{{ article.getId() }}" class="list-group-item">
+            <h4 class="list-group-item-heading">{{ article.getTitle() }}</h4>
+            <p class="list-group-item-text">
+              {{ article.getDescription() }}
+            </p>
+            <p class="list-group-item-text small">source: {{ article.getSourceSite() }}</p>
+            <p class="list-group-item-text small">tags: {{ article.getTags() }}</p>
+          </a>
+          </div>
+      {%if loop.index is divisibleby(3)%}
+        </div>
+      {% endif %}
+      {% endfor %}
+      
+  </body>
+</html>
